@@ -1,0 +1,16 @@
+div {
+    padding-top: 150px;
+    width: 950px;
+    background-image: url('http://1.bp.blogspot.com/-3dRNbYP2pxU/TYdqe6O4gNI/AAAAAAAAA3E/kMl4wf8nvWA/s1600/Doggy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Gill Sans', sans-serif;
+    margin: 10px;
+}
+
+

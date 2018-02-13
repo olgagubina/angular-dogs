@@ -1,0 +1,58 @@
+h3 {
+    text-align: center;
+    font-family: 'Gill Sans', sans-serif;
+    margin: 10px;
+    margin-bottom: 5px;
+}
+
+input {
+    display: block;
+    margin: 3px auto;
+    width: 150px;
+    padding: 5px;
+    outline-color: rgb(171, 168, 209);
+}
+
+span {
+    display: block;
+    text-align: center;
+    font-family: 'Gill Sans', sans-serif;
+    margin: 10px;
+}
+
+/* li {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: 'Gill Sans', sans-serif;
+    list-style-type: none;
+    width:500px;
+} */
+
+.message { 
+    font-size: 0.8em; 
+}
+ 
+.warning {
+    color: red;
+}
+
+button {
+    background-color: red;
+    width: 25px;
+    font-family: 'Gill Sans', sans-serif;
+    color: white;
+    border-radius: 3px;
+    float: right;
+    outline-color: rgb(209, 168, 168);
+    outline-width: 0.2px;
+}
+
+.add {
+    float: none;
+    width: 60px;
+    display: block;
+    margin: 5px auto;
+    outline-color: rgb(209, 168, 168);
+    outline-width: 0.2px;
+}
