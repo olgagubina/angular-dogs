@@ -25,8 +25,13 @@ export class DogService {
     return this.dogs;
   }
 
+  editDog(id: Number, dog: Dog) {
+    let updateDogIndex = this.dogs.findIndex((dog) => dog.id == id);
+    this.dogs[updateDogIndex] = dog;
+  }
+
   deleteADog(i) {
-    DOGS.splice(i,1);
+    this.dogs.splice(i,1);
   }
 
   generateId (): number {

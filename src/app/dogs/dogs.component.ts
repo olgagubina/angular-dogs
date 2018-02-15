@@ -10,6 +10,7 @@ import { Dog } from './dog.model';
 export class DogsComponent implements OnInit {
   dogs: any; 
   buttonContent:string="-";
+  selectedDog: Dog = new Dog();
 
   constructor(private dogService: DogService) { }
 
@@ -25,6 +26,10 @@ export class DogsComponent implements OnInit {
       dog.toggleClass = true;
       this.buttonContent="+";
     }
+  }
+
+  chooseToEditDog(dog) {
+    this.selectedDog = dog;
   }
 
   deleteDog(i) {

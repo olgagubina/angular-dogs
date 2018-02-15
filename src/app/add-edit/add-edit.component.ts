@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DogService } from '../dog.service';
 import { Dog } from '../dogs/dog.model';
 
@@ -9,7 +9,7 @@ import { Dog } from '../dogs/dog.model';
 })
 export class AddEditComponent implements OnInit {
   dogs: any; 
-  newDog: Dog = new Dog();
+  @Input() newDog: Dog = new Dog();
   // dogName: string;
   // dogWeight: number;
   // birthDate: any;
