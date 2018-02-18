@@ -1,4 +1,4 @@
-<app-add-edit [newDog]="selectedDog"></app-add-edit>
+<app-add-edit (dogAdded)="addLastUpdated($event)" (cancelEd)="cancelToEditDog($event)" [newDog]="selectedDog"></app-add-edit>
 <h3>Doggy-doggy list:</h3>
 <ul>
   <li *ngFor="let dog of dogs; let i = index">{{i+1}}) {{dog.name|uppercase}} - {{dog.weight}}kgs - {{dog.toggleClass ? (dog.birthDate) : (dog.birthDate| date:short)}} 
@@ -7,3 +7,4 @@
     <button (click)='toggleDatePipe(dog)'>{{buttonContent}}</button> 
   </li>
 </ul>
+<h5 *ngIf="addedDog">{{addedDog}}</h5>

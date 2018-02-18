@@ -5,4 +5,4 @@
 <button *ngIf="!newDog.id" class="add" (click)='addDog()'>Add</button>
 <button *ngIf="newDog.id" class="add" (click)='edDog()'>Edit</button>
 <button *ngIf="newDog.id" class="add" (click)='cancelEd()'>Cancel edit</button>
-<span *ngIf = "dogWeight < 10 && dogWeight > 0 " [ngClass]="{'warning' : dogWeight < 5, 'message': true }">{{dogName}} is underweight</span>
+<span *ngIf = "newDog.weight < 10 && newDog.weight > 0 " [ngClass]="{'warning' : newDog.weight < 5, 'message': true }">{{newDog.name}} is underweight</span>

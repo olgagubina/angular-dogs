@@ -11,6 +11,7 @@ export class DogsComponent implements OnInit {
   dogs: any; 
   buttonContent:string="-";
   selectedDog: Dog = new Dog();
+  addedDog: String;
 
   constructor(private dogService: DogService) { }
 
@@ -28,8 +29,16 @@ export class DogsComponent implements OnInit {
     }
   }
 
+  addLastUpdated(dog) {
+    this.addedDog = "Last dog added: " + new Date().toString() + ", name: " + dog.name;
+  }
+
   chooseToEditDog(dog) {
-    this.selectedDog = dog;
+    this.selectedDog = Object.assign({},dog);
+  }
+
+  cancelToEditDog(dogs) {
+    this.dogs = dogs;	    
   }
 
   deleteDog(i) {
