@@ -11,12 +11,10 @@ export class AddEditComponent implements OnInit {
   dogs: any; 
   @Input() newDog: Dog = new Dog();
   @Output() dogAdded : EventEmitter<Dog> = new EventEmitter();
-  @Output() cancelEditdogs : EventEmitter<any> = new EventEmitter();
 
   constructor(private dogService: DogService) { }
 
   ngOnInit() {
-    // this.dogs = this.dogService.getDogs();
   }
 
   addDog() {
@@ -31,9 +29,6 @@ export class AddEditComponent implements OnInit {
   }
 
   cancelEd() {
-    // this.dogs = this.dogService.getDogs();
-    // console.log(this.dogs);
-    // this.cancelEditdogs.emit(this.dogs);
     this.newDog = new Dog();
   }
 }

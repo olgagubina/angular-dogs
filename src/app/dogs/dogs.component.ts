@@ -37,10 +37,6 @@ export class DogsComponent implements OnInit {
     this.selectedDog = Object.assign({},dog);
   }
 
-  cancelToEditDog(dogs) {
-    this.dogs = dogs;	    
-  }
-
   deleteDog(i) {
   this.dogService.deleteADog(i);
   }
