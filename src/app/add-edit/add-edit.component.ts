@@ -10,9 +10,6 @@ import { Dog } from '../dogs/dog.model';
 export class AddEditComponent implements OnInit {
   dogs: any; 
   @Input() newDog: Dog = new Dog();
-  // dogName: string;
-  // dogWeight: number;
-  // birthDate: any;
 
   constructor(private dogService: DogService) { }
 
@@ -22,6 +19,15 @@ export class AddEditComponent implements OnInit {
 
   addDog() {
     this.dogService.addADog(this.newDog);
+    this.newDog = new Dog();
+  }
+
+  edDog() {
+    this.dogService.editDog(this.newDog.id, this.newDog);
+    this.newDog = new Dog();
+  }
+
+  cancelEd() {
     this.newDog = new Dog();
   }
 }

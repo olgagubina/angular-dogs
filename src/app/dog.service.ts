@@ -28,6 +28,7 @@ export class DogService {
   editDog(id: Number, dog: Dog) {
     let updateDogIndex = this.dogs.findIndex((dog) => dog.id == id);
     this.dogs[updateDogIndex] = dog;
+    console.log(this.dogs);
   }
 
   deleteADog(i) {
