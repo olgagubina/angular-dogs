@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DogService } from '../dog.service';
 import { Dog } from './dog.model';
 
@@ -13,10 +14,16 @@ export class DogsComponent implements OnInit {
   selectedDog: Dog = new Dog();
   addedDog: String;
 
-  constructor(private dogService: DogService) { }
+  constructor(private dogService: DogService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.dogs = this.dogService.getDogs();	
+    this.route.queryParams.subscribe(queryParams => {
+      if(queryParams.name) {
+      this.dogs = this.dogService.getDogbyName(queryParams.name.toLowerCase());
+      console.log(this.dogs);
+      }
+    });
   }
 
   toggleDatePipe(dog){

@@ -5,17 +5,22 @@ import { DogService } from './dog.service';
 import { AppComponent } from './app.component';
 import { DogsComponent } from './dogs/dogs.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './/app-routing.module';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DogsComponent,
-    AddEditComponent
+    AddEditComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule 
+    FormsModule,
+    AppRoutingModule 
   ],
   providers: [DogService],
   bootstrap: [AppComponent]

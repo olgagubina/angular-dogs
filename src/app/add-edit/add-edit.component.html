@@ -3,6 +3,6 @@
 <input type="text" [(ngModel)]="newDog.weight"  placeholder="Dog weight">
 <input type="date" [(ngModel)]="newDog.birthDate"  placeholder="">
 <button *ngIf="!newDog.id" class="add" (click)='addDog()'>Add</button>
-<button *ngIf="newDog.id" class="add" (click)='edDog()'>Edit</button>
-<button *ngIf="newDog.id" class="add" (click)='cancelEd()'>Cancel edit</button>
+<button *ngIf="newDog.id" class="add" (click)='edDog()' routerLink="/">Edit</button>
+<button *ngIf="newDog.id" class="add" (click)='cancelEd()' routerLink="/">Cancel</button>
 <span *ngIf = "newDog.weight < 10 && newDog.weight > 0 " [ngClass]="{'warning' : newDog.weight < 5, 'message': true }">{{newDog.name}} is underweight</span>

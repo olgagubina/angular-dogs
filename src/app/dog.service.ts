@@ -25,6 +25,15 @@ export class DogService {
     return this.dogs;
   }
 
+  getDogbyID(id) {
+    let currentDogObj = this.dogs.find(function(dog){return dog.id==id});
+    return currentDogObj;
+  }
+
+  getDogbyName(name) {
+    return this.dogs.filter(dog => dog.name.toLowerCase().includes(name))
+  }
+
   editDog(id: Number, dog: Dog) {
     let updateDogIndex = this.dogs.findIndex((dog) => dog.id == id);
     this.dogs[updateDogIndex] = dog;

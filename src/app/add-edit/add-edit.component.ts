@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DogService } from '../dog.service';
 import { Dog } from '../dogs/dog.model';
 
@@ -9,19 +10,20 @@ import { Dog } from '../dogs/dog.model';
 })
 export class AddEditComponent implements OnInit {
   dogs: any; 
-  @Input() newDog: Dog = new Dog();
-  @Output() dogAdded : EventEmitter<Dog> = new EventEmitter();
-  @Output() cancelEditdogs : EventEmitter<any> = new EventEmitter();
+  newDog: Dog = new Dog();
 
-  constructor(private dogService: DogService) { }
+  constructor(private dogService: DogService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.dogs = this.dogService.getDogs();
+    this.route.params.subscribe(params => {
+      this.newDog = Object.assign({}, this.dogService.getDogbyID(params.id));
+      // console.log("the id parameter is: " + params.id);
+    });
   }
 
   addDog() {
     this.dogService.addADog(this.newDog);
-    this.dogAdded.emit(this.newDog);   
+    // this.dogAdded.emit(this.newDog);   
     this.newDog = new Dog();
   }
 
